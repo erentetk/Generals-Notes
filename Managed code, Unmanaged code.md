@@ -23,6 +23,6 @@ Unmanaged code da
 - GC doğrudan geçerli değildir. 
 -  işletim sistemi  ile daha iç içedir.
 
-**Örnek diller**; C++ , C , Assembly
+Örnek diller; C++ , C , Assembly
 
 
