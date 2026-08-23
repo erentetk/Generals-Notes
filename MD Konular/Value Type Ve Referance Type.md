@@ -4,7 +4,7 @@ Bir değer tipi başka bir değişkene atandığında veya bir metoda parametre 
 
 `int`, `long`, `float`, `double`, `decimal`, `char`, `bool`, `byte`, `short`, `struct` ve `enum`
 
-Bunalar ilkel (primitive ) veri tipleridir. Bunlar orogramlama dilleri tarafında önceden ayrılmış  temel veri türleridir. Nesne olara kabul edilmezler  ve veriyi doğrudan taşıma özelliğine sahiptir.
+Bunalar ilkel (primitive ) veri tipleridir. Bunlar porogramlama dilleri tarafında önceden ayrılmış  temel veri türleridir. Nesne olara kabul edilmezler  ve veriyi doğrudan taşıma özelliğine sahiptir.
 
 # Referance Type
 
