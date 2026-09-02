@@ -46,14 +46,3 @@ public async Task CalistirAsync()
 
 `CalistirAsync()` de `async` çünkü içinde `await VeriOkuAsync()` var. `VeriOkuAsync()` beklerken, `CalistirAsync()`'in thread'i de serbest kalır. Bu zincir böyle yukarı doğru devam eder — bu yüzden "async all the way" (baştan sona asenkron) deniyor. Zincirin bir yerinde birisi `.Result` veya `.GetAwaiter().GetResult()` ile bu zinciri kırıp senkrona çevirirse, deadlock riski ortaya çıkar.
 
-## Bu konuyla ilgili anlatılması gereken birkaç şey daha var
-
-Önem sırasına göre:
-
-1. **Birden fazla asenkron işi aynı anda çalıştırma** (`Task.WhenAll`, `Task.WhenAny`). Şu ana kadar hep tek bir `await` gördünüz ama gerçek projelerde genelde birden fazla işi aynı anda başlatıp hepsinin bitmesini beklemek gerekir — sırayla `await` yapmak yerine.
-    
-2. **`CancellationToken`** — bir asenkron işlemi dışarıdan "iptal et" diyebilmek için kullanılan mekanizma. `StopAsync()` gibi metotlar düşünülünce, gerçek bir dinleme (listen) işlemini iptal etmek genelde bununla yapılır.
-    
-3. **Exception (hata) davranışı** — `async` bir metotta hata fırlarsa bu hata `Task`'ın içinde saklanır ve ancak siz o `Task`'ı `await` ettiğinizde fırlar. Bunu bilmemek, "neden hatam try-catch'e düşmüyor" tarzı kafa karışıklığına yol açar.
-    
-4. **`ValueTask`** — performans kritik yerlerde `Task` yerine kullanılan, daha hafif bir alternatif. Şimdilik bilmeniz şart değil ama ileride kodda görürseniz şaşırmayın diye.
