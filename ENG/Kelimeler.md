@@ -1,6 +1,4 @@
-orchards  -meyve bahçeleri
-	firm -   firma 
-	
+
 
 | orchards  | meyve baçeleri |
 | --------- | -------------- |
